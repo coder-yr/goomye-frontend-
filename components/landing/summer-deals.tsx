@@ -15,7 +15,17 @@ export function SummerDeals() {
           <CardContent className="p-4">
             <div className="aspect-square rounded-md bg-muted overflow-hidden">
               <img
-                src={`/.jpg?height=160&width=160&query=${encodeURIComponent(i.title)}`}
+                src={
+                  i.title === "Tower Fan"
+                    ? "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80"
+                    : i.title === "Split AC 1.5T"
+                    ? "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                    : i.title === "Dehumidifier"
+                    ? "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
+                    : i.title === "Air Cooler"
+                    ? "https://images.unsplash.com/photo-1517263904808-5dc0d6e1b8a6?auto=format&fit=crop&w=400&q=80"
+                    : ""
+                }
                 alt={i.title}
                 className="h-full w-full object-contain"
                 crossOrigin="anonymous"

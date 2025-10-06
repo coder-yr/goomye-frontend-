@@ -21,8 +21,18 @@ export function DealsRow() {
             <CardHeader className="pb-2">
               <div className="aspect-square rounded-md bg-muted overflow-hidden">
                 <img
-                  src={`/.jpg?height=180&width=180&query=${encodeURIComponent(p.title)}`}
-                  alt={`${p.title}`}
+                  src={
+                    p.title === "Gaming PC"
+                      ? "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=400&q=80"
+                      : p.title === "Laptop"
+                      ? "https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80"
+                      : p.title === "Smartwatch"
+                      ? "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=400&q=80"
+                      : p.title === "Air Purifier"
+                      ? "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
+                      : ""
+                  }
+                  alt={p.title}
                   className="h-full w-full object-contain"
                   crossOrigin="anonymous"
                 />

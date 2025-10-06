@@ -21,7 +21,7 @@ export function Hero() {
             </div>
             <div className="aspect-[16/9] md:aspect-auto md:h-[420px]">
               <img
-                src="/wireless-headphones-black-front-view.jpg"
+                src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=800&q=80"
                 alt="Lifestyle model showcasing new arrivals"
                 className="h-full w-full object-cover"
                 crossOrigin="anonymous"
