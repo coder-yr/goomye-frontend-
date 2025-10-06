@@ -8,6 +8,14 @@ import { SummerDeals } from "@/components/landing/summer-deals"
 import { CuratedBand } from "@/components/landing/curated-band"
 import { Marquee } from "@/components/landing/marquee"
 import { AppBenefits } from "@/components/landing/app-benefits"
+import { FeaturedProducts } from "@/components/landing/featured-products"
+import { FeaturedProductsSkeleton } from "@/components/landing/featured-products.skeleton"
+import { Suspense } from "react"
+
+export const metadata = {
+  title: "Goomye - Shop the best deals",
+  description: "Discover trending products across computers, mobiles, and more.",
+}
 
 export default function Page() {
   return (
@@ -45,6 +53,13 @@ export default function Page() {
 
       <section className="container mx-auto px-4 lg:px-6 py-12">
         <AppBenefits />
+      </section>
+
+      <section className="container mx-auto px-4 lg:px-6 py-8">
+        <h2 className="text-balance text-xl font-semibold mb-4">Featured products</h2>
+        <Suspense fallback={<FeaturedProductsSkeleton />}>
+          <FeaturedProducts />
+        </Suspense>
       </section>
     </main>
   )

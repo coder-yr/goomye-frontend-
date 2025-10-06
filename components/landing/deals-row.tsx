@@ -29,8 +29,8 @@ export function DealsRow() {
                       : p.title === "Smartwatch"
                       ? "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=400&q=80"
                       : p.title === "Air Purifier"
-                      ? "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80"
-                      : ""
+                      ? "/placeholder.svg"
+                      : "/placeholder.svg"
                   }
                   alt={p.title}
                   className="h-full w-full object-contain"

@@ -25,8 +25,8 @@ export function CuratedBand() {
                       : c.title === "IND+ Learning"
                       ? "https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80"
                       : c.title === "Trusted Service"
-                      ? "https://images.unsplash.com/photo-1517263904808-5dc0d6e1b8a6?auto=format&fit=crop&w=400&q=80"
-                      : ""
+                      ? "/placeholder.svg"
+                      : "/placeholder.svg"
                   }
                   alt={c.title}
                   className="h-full w-full object-cover"
