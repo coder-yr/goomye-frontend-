@@ -1,12 +1,11 @@
-import { products } from "@/data/products"
 import { getAverage, getHistogram, reviews as allReviews } from "@/data/reviews"
 import { ReviewSummary } from "@/components/review-summary"
 import { ReviewList } from "@/components/review-list"
 import Link from "next/link"
 
 export default function ProductReviewsPage({ params }: { params: { slug: string } }) {
-  const product = products.find((p) => p.id === params.slug)
   const productReviews = allReviews.filter((r) => r.productId === params.slug)
+  const product = productReviews.length > 0 ? { id: params.slug, title: "Product" } : null
   const average = getAverage(productReviews)
   const histogram = getHistogram(productReviews)
 

@@ -22,14 +22,20 @@ export default function Page() {
     <main className="min-h-dvh">
       <HeaderBar />
       <Hero />
-      <section className="container mx-auto px-4 lg:px-6 py-8">
-        <h2 className="text-balance text-xl font-semibold mb-4">Top categories</h2>
-        <hr className="border-border mb-6" />
+      <section className="container mx-auto px-4 lg:px-6 py-12">
+        <div className="space-y-2 mb-8">
+          <h2 className="text-balance text-2xl md:text-3xl font-bold">Top categories</h2>
+          <p className="text-muted-foreground">Browse our most popular product categories</p>
+        </div>
+        <hr className="border-border mb-8" />
         <CategoryGrid />
       </section>
 
-      <section className="container mx-auto px-4 lg:px-6 py-8">
-        <h2 className="text-balance text-xl font-semibold mb-4">Trending New Deals Everyday</h2>
+      <section className="container mx-auto px-4 lg:px-6 py-12">
+        <div className="space-y-2 mb-6">
+          <h2 className="text-balance text-2xl md:text-3xl font-bold">Trending New Deals Everyday</h2>
+          <p className="text-muted-foreground">Check out today's hottest offers</p>
+        </div>
         <DealsRow />
       </section>
 
@@ -39,13 +45,19 @@ export default function Page() {
         <FeatureTiles />
       </section>
 
-      <section className="container mx-auto px-4 lg:px-6 py-8">
-        <h2 className="text-balance text-xl font-semibold mb-4">Summer Special Deals</h2>
+      <section className="container mx-auto px-4 lg:px-6 py-12">
+        <div className="space-y-2 mb-6">
+          <h2 className="text-balance text-2xl md:text-3xl font-bold">Summer Special Deals</h2>
+          <p className="text-muted-foreground">Limited time summer offers you can't miss</p>
+        </div>
         <SummerDeals />
       </section>
 
-      <section className="container mx-auto px-4 lg:px-6 py-8">
-        <h2 className="text-balance text-xl font-semibold mb-4">Exclusively Curated for You</h2>
+      <section className="container mx-auto px-4 lg:px-6 py-12">
+        <div className="space-y-2 mb-6">
+          <h2 className="text-balance text-2xl md:text-3xl font-bold">Exclusively Curated for You</h2>
+          <p className="text-muted-foreground">Handpicked selections based on your preferences</p>
+        </div>
         <CuratedBand />
       </section>
 
@@ -55,8 +67,11 @@ export default function Page() {
         <AppBenefits />
       </section>
 
-      <section className="container mx-auto px-4 lg:px-6 py-8">
-        <h2 className="text-balance text-xl font-semibold mb-4">Featured products</h2>
+      <section className="container mx-auto px-4 lg:px-6 py-12">
+        <div className="space-y-2 mb-6">
+          <h2 className="text-balance text-2xl md:text-3xl font-bold">Featured products</h2>
+          <p className="text-muted-foreground">Discover our top picks across all categories</p>
+        </div>
         <Suspense fallback={<FeaturedProductsSkeleton />}>
           <FeaturedProducts />
         </Suspense>

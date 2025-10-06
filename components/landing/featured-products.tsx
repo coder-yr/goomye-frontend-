@@ -55,15 +55,26 @@ export async function FeaturedProducts() {
   ])
 
   return (
-    <section className="container mx-auto px-4 lg:px-6 py-10 space-y-10">
+    <section className="space-y-12">
       <div>
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-balance text-xl font-semibold">Computers</h2>
-          <Link className="text-sm text-primary hover:underline" href="/category/computers">View all</Link>
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-balance text-2xl font-bold">Computers</h2>
+          <Link
+            className="text-sm font-medium text-primary hover:underline hover:text-primary/80 transition-colors flex items-center gap-1 group"
+            href="/category/computers"
+          >
+            View all
+            <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {computers.slice(0, 4).map((p) => (
-            <Link key={p.id} href={`/products/${p.id}`}>
+          {computers.slice(0, 4).map((p, index) => (
+            <Link
+              key={p.id}
+              href={`/products/${p.id}`}
+              className="animate-fadeIn"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <ProductCard product={p} />
             </Link>
           ))}
@@ -71,13 +82,24 @@ export async function FeaturedProducts() {
       </div>
 
       <div>
-        <div className="mb-4 flex items-center justify-between">
-          <h2 className="text-balance text-xl font-semibold">Mobiles</h2>
-          <Link className="text-sm text-primary hover:underline" href="/category/mobiles">View all</Link>
+        <div className="mb-6 flex items-center justify-between">
+          <h2 className="text-balance text-2xl font-bold">Mobiles</h2>
+          <Link
+            className="text-sm font-medium text-primary hover:underline hover:text-primary/80 transition-colors flex items-center gap-1 group"
+            href="/category/mobiles"
+          >
+            View all
+            <span className="group-hover:translate-x-1 transition-transform inline-block">→</span>
+          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {mobiles.slice(0, 4).map((p) => (
-            <Link key={p.id} href={`/products/${p.id}`}>
+          {mobiles.slice(0, 4).map((p, index) => (
+            <Link
+              key={p.id}
+              href={`/products/${p.id}`}
+              className="animate-fadeIn"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
               <ProductCard product={p} />
             </Link>
           ))}

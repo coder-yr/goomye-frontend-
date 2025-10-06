@@ -1,9 +1,9 @@
 "use client"
 
-import { products as data, type Product } from "@/data/products"
+import { type Product } from "@/data/products"
 import { ProductCard } from "./product-card"
 
-export function ProductsGrid({ products = data }: { products?: Product[] }) {
+export function ProductsGrid({ products = [] }: { products?: Product[] }) {
   return (
     <div
       className="

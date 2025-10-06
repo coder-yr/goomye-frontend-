@@ -134,3 +134,43 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+    opacity: 0;
+  }
+
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
+
+  .scroll-smooth::-webkit-scrollbar {
+    height: 8px;
+  }
+
+  .scroll-smooth::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .scroll-smooth::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 4px;
+  }
+
+  .scroll-smooth::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}

@@ -12,12 +12,16 @@ export function DealsRow() {
   return (
     <div className="relative">
       <div
-        className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 lg:mx-0 lg:px-0"
+        className="flex gap-4 overflow-x-auto pb-2 -mx-4 px-4 lg:mx-0 lg:px-0 scroll-smooth"
         role="list"
         aria-label="Trending deals"
       >
-        {products.map((p) => (
-          <Card key={p.id} className="min-w-[220px] sm:min-w-[240px]">
+        {products.map((p, index) => (
+          <Card
+            key={p.id}
+            className="min-w-[220px] sm:min-w-[240px] hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group animate-fadeIn"
+            style={{ animationDelay: `${index * 100}ms` }}
+          >
             <CardHeader className="pb-2">
               <div className="aspect-square rounded-md bg-muted overflow-hidden">
                 <img
@@ -33,7 +37,7 @@ export function DealsRow() {
                       : "/placeholder.svg"
                   }
                   alt={p.title}
-                  className="h-full w-full object-contain"
+                  className="h-full w-full object-contain transition-transform duration-500 group-hover:scale-110"
                   crossOrigin="anonymous"
                 />
               </div>
@@ -42,8 +46,10 @@ export function DealsRow() {
               <CardTitle className="text-sm line-clamp-2">{p.title}</CardTitle>
               <p className="text-sm text-muted-foreground mt-1">{"Rating " + p.rating}</p>
               <div className="mt-2 flex items-center justify-between">
-                <span className="font-semibold">{p.price}</span>
-                <Button size="sm">Add</Button>
+                <span className="font-semibold text-lg">{p.price}</span>
+                <Button size="sm" className="hover:scale-110 transition-transform shadow-sm hover:shadow-md">
+                  Add
+                </Button>
               </div>
             </CardContent>
           </Card>
